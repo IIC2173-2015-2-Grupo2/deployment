@@ -14,5 +14,5 @@ web:
 
 newrelic:
   extends:
-    file: analytics.yml
+    file: ./../analytics.yml
     service: newrelic

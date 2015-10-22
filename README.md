@@ -21,15 +21,7 @@ docker run -d \
 Or add it to `docker-compose.yml`:
 ```sh
 newrelic:
-  image: uzyexe/newrelic
-  restart: "on-failure"
-  privileged: true
-  volumes:
-    - "/var/run/docker.sock:/var/run/docker.sock"
-    - "/dev:/dev"
-    - "/sys:/sys"
-  environment:
-    - "NEW_RELIC_LICENSE_KEY
-  pid: host
-  net: host
+  extends:
+    file: ./../analytics.yml
+    service: newrelic
 ```
