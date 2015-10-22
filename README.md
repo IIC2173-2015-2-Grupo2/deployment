@@ -1,6 +1,11 @@
 # Deployment
 
 ### New Relic
+
+```sh
+export NEW_RELIC_LICENSE_KEY="KEY"
+```
+
 To create a monitoring container:
 ```sh
 # Make sure to replace 'SECRET_KEY' with your actual key
@@ -18,8 +23,8 @@ docker run -d \
   uzyexe/newrelic
 ```
 
-Or add it to `docker-compose.yml`:
-```sh
+Or just import `analytics.yml`:
+```yml
 newrelic:
   extends:
     file: ./../analytics.yml
