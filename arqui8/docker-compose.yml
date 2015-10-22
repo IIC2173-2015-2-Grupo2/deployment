@@ -16,3 +16,5 @@ newrelic:
   extends:
     file: ./../analytics.yml
     service: newrelic
+  environment:
+    - NEW_RELIC_LICENSE_KEY
