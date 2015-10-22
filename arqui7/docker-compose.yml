@@ -1,0 +1,14 @@
+neo4j:
+  image: tpires/neo4j
+  restart: always
+  ports:
+    - "80:7474"
+  environment:
+    - NEO4J_AUTH
+  cap_add:
+    - SYS_RESOURCE
+
+newrelic:
+  extends:
+    file: ./../analytics.yml
+    service: newrelic
