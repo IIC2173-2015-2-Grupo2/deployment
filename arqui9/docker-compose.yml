@@ -1,0 +1,37 @@
+nginx:
+  build: ./nginx
+  restart: always
+  links:
+    - node1:node1
+    - node2:node2
+    - node3:node3
+  ports:
+    - "80:80"
+
+node1:
+  image: iic2173grupo2/gui
+  ports:
+    - "3000:3000"
+  environment:
+    - NODE_ENV=production
+
+node2:
+  image: iic2173grupo2/gui
+  ports:
+    - "3000:3000"
+  environment:
+    - NODE_ENV=production
+
+node3:
+  image: iic2173grupo2/gui
+  ports:
+    - "3000:3000"
+  environment:
+    - NODE_ENV=production
+
+newrelic:
+  extends:
+    file: ./../analytics.yml
+    service: newrelic
+  environment:
+    - NEW_RELIC_LICENSE_KEY

@@ -8,10 +8,9 @@ export NEW_RELIC_LICENSE_KEY="KEY"
 
 To create a monitoring container:
 ```sh
-# Make sure to replace 'SECRET_KEY' with your actual key
 docker run -d \
   -v /var/run/docker.sock:/var/run/docker.sock:ro \
-  -e NEW_RELIC_LICENSE_KEY=NEW_RELIC_LICENSE_KEY \
+  -e NEW_RELIC_LICENSE_KEY=$NEW_RELIC_LICENSE_KEY \
   --privileged \
   --pid="host" \
   --net="host" \
@@ -29,4 +28,6 @@ newrelic:
   extends:
     file: ./../analytics.yml
     service: newrelic
+  environment:
+    - NEW_RELIC_LICENSE_KEY
 ```
