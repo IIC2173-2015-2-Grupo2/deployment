@@ -1,5 +1,9 @@
 # Deployment
 
+### Prepare server
+
+See: https://gist.github.com/mrpatiwi/de1b929785347cd1a22e
+
 ### New Relic
 
 ```sh
