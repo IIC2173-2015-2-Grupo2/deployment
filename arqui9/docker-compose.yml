@@ -1,37 +1,12 @@
-nginx:
-  build: ./nginx
+lb:
   restart: always
-  links:
-    - node1:node1
-    - node2:node2
-    - node3:node3
+  image: tutum/haproxy
   ports:
     - "80:80"
+  links:
+    - web:web
 
-node1:
+web:
   image: iic2173grupo2/gui
-  ports:
-    - "3000:3000"
   environment:
     - NODE_ENV=production
-
-node2:
-  image: iic2173grupo2/gui
-  ports:
-    - "3000:3000"
-  environment:
-    - NODE_ENV=production
-
-node3:
-  image: iic2173grupo2/gui
-  ports:
-    - "3000:3000"
-  environment:
-    - NODE_ENV=production
-
-newrelic:
-  extends:
-    file: ./../analytics.yml
-    service: newrelic
-  environment:
-    - NEW_RELIC_LICENSE_KEY
