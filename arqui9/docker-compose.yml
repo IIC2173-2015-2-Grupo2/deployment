@@ -10,3 +10,10 @@ web:
   image: iic2173grupo2/gui
   environment:
     - NODE_ENV=production
+
+newrelic:
+  extends:
+    file: ./../analytics.yml
+    service: newrelic
+  environment:
+    - NEW_RELIC_LICENSE_KEY
