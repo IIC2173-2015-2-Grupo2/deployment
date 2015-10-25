@@ -10,8 +10,6 @@ nginx:
 web1:
   image: iic2173grupo2/news-api
   restart: always
-  ports:
-    - "8000:8000"
   environment:
     - ENVIRONMENT=PRODUCTION
     - AUTH=ENABLE
@@ -24,8 +22,6 @@ web1:
 web2:
   image: iic2173grupo2/news-api
   restart: always
-  ports:
-    - "8000:8000"
   environment:
     - ENVIRONMENT=PRODUCTION
     - AUTH=ENABLE
