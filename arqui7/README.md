@@ -6,7 +6,7 @@
 $ docker-compose up -d
 
 # See logs
-$ docker-compose logs neo4j
+$ docker-compose logs
 
 # Stop
 $ docker-compose stop
