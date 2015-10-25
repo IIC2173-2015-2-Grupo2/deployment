@@ -13,5 +13,6 @@ $ docker-compose stop
 
 # To scale
 $ docker-compose scale web=3
+$ docker-compose up --force-recreate -d
 $ docker-compose logs
 ```

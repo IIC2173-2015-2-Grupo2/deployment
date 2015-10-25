@@ -1,10 +1,9 @@
 lb:
-  restart: always
   image: tutum/haproxy
   ports:
-    - "80:80"
+    - "80"
   links:
-    - web:web
+    - web
 
 web:
   image: iic2173grupo2/gui
