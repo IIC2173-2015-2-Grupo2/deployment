@@ -1,6 +1,7 @@
 neo4j:
   image: neo4j
   restart: always
+  privileged: true
   ports:
     - "80:7474"
   environment:
