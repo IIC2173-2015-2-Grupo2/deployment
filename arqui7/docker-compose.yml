@@ -1,5 +1,5 @@
 neo4j:
-  image: tpires/neo4j
+  image: neo4j
   restart: always
   ports:
     - "80:7474"
