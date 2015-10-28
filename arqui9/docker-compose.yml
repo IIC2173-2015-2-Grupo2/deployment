@@ -1,7 +1,7 @@
 lb:
   image: tutum/haproxy
   ports:
-    - "80"
+    - "80:80"
   links:
     - web
 
