@@ -8,7 +8,10 @@ lb:
 analyzer:
   image: iic2173grupo2/analyzer2
   environment:
-    - ENV=production
+    - NEO4J_HOST
+    - NEO4J_PORT
+    - NEO4J_USER
+    - NEO4J_PASS
 
 newrelic:
   extends:
