@@ -3,6 +3,7 @@
 ## Settings
 ```sh
 $ export NEW_RELIC_LICENSE_KEY="KEY"
+$ export LOADER_IO_TOKEN="TOKEN"
 ```
 
 ## Start
