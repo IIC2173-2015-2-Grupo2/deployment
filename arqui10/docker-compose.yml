@@ -3,10 +3,11 @@ lb:
   ports:
     - "80:80"
   links:
-    - analyzer
+    - analyzer2
 
-analyzer:
+analyzer2:
   image: iic2173grupo2/analyzer2
+  command: mvn exec:java
   environment:
     - NEO4J_HOST
     - NEO4J_PORT
