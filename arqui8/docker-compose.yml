@@ -1,27 +1,11 @@
-nginx:
-  build: ./nginx
-  restart: always
-  links:
-    - web1:web1
-    - web2:web2
+lb:
+  image: tutum/haproxy
   ports:
     - "80:80"
+  links:
+    - web
 
-web1:
-  image: iic2173grupo2/news-api
-  restart: always
-  environment:
-    - ENVIRONMENT=PRODUCTION
-    - AUTH=ENABLE
-    - SECRET_HASH
-    - NEO4J_HOST
-    - NEO4J_PORT
-    - NEO4J_USER
-    - NEO4J_PASS
-    - LOADER_IO_TOKEN
-    - ANALYTICS_TOKEN
-
-web2:
+web:
   image: iic2173grupo2/news-api
   restart: always
   environment:
