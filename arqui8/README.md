@@ -24,7 +24,7 @@ $ docker-compose up -d db
 ```
 Lets create a database:
 ```sh
-$ docker-compose run db bash
+$ docker exec -it arqui8_db_1 /bin/bash
 ```
 
 Inside our container, log to postgres service:
