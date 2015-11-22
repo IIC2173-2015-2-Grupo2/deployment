@@ -16,6 +16,39 @@ $ export LOADER_IO_TOKEN="TOKEN"
 ```
 
 ## Start
+
+### Setup database
+Init PostgreSQL database container:
+```sh
+$ docker-compose up -d db
+```
+Lets create a database:
+```sh
+$ docker-compose run db bash
+```
+
+Inside our container, log to postgres service:
+```sh
+$ psql -U postgres
+```
+
+Create Database
+```sh
+CREATE DATABASE newsapi;
+```
+
+Exit postgres:
+```sh
+\q
+```
+
+Exit container:
+```sh
+$ exit
+```
+
+### Setup webapp
+
 ```sh
 # Start containers
 $ docker-compose up -d
