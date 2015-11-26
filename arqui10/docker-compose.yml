@@ -7,6 +7,7 @@ lb:
 
 analyzer2:
   image: iic2173grupo2/analyzer2
+  restart: always
   command: mvn exec:java
   environment:
     - NEO4J_HOST
