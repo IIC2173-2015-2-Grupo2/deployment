@@ -2,6 +2,8 @@ neo4j:
   image: neo4j
   restart: always
   privileged: true
+  volumes:
+    - ./../../neo4j/data:/data
   ports:
     - "80:7474"
   environment:
@@ -15,4 +17,3 @@ newrelic:
     service: newrelic
   environment:
     - NEW_RELIC_LICENSE_KEY
-    - NEO4J_CACHE_MEMORY=4G
