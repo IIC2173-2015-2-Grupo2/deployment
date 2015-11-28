@@ -1,16 +1,8 @@
-nginx:
-  build: ./nginx
-  restart: always
-  links:
-    - local:local
-  ports:
-    - "80:80"
-
-local:
+analyzer:
   image: iic2173grupo2/analyzer2
   restart: always
   ports:
-    - "8080:8080"
+    - "80:8080"
   command: mvn exec:java
   environment:
     - NEO4J_HOST
