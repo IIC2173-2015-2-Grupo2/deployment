@@ -20,9 +20,4 @@ $ docker-compose logs
 
 # Stop
 $ docker-compose stop
-
-# To scale
-$ docker-compose scale analyzer2=2
-$ docker-compose up --force-recreate -d
-$ docker-compose logs
 ```
